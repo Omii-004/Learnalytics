@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login | Learnalytics</title>
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/teacher.css' %}">
+</head>
+<body>
+    <div class="container" style="max-width: 420px; margin-top: 80px;">
+        <div class="card">
+            <h1 style="text-align:center;">Student Login</h1>
+            {% if messages %}
+            {% for msg in messages %}
+            <p style="color:var(--orange); text-align:center;">{{ msg }}</p>
+            {% endfor %}
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div style="margin-bottom:1rem;">
+                    <label>Username</label>
+                    <input type="text" name="username" required style="width:100%;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label>Password</label>
+                    <input type="password" name="password" required style="width:100%;">
+                </div>
+                <button class="btn" type="submit" style="width:100%;">Login</button>
+            </form>
+            <p style="text-align:center; margin-top:1rem;">
+                <a class="link" href="/">Back to Home</a>
+            </p>
+        </div>
+    </div>
+    <div class="footer" style="text-align:center; padding:20px; color:var(--muted); font-size:13px; border-top:1px solid var(--border); margin-top:40px;">
+        Built by <a href="https://github.com/Joey-1123" style="color:var(--cyan);">Shubham Panchal</a> &amp;
+        <a href="https://github.com/Omii-004" style="color:var(--cyan);">Omkar Tamalwad</a> — Learnalytics
+    </div>
+</body>
+
+</html>

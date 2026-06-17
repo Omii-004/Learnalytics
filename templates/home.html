@@ -1,10 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <title>Learnalytics</title>
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
@@ -37,14 +38,20 @@
                 <div class="login-main-label">Login here →</div>
 
                 <div class="login-choices">
-                    <a href="/admin/" class="choice admin">Admin</a>
+                    <a href="{% url 'admin_login' %}" class="choice admin">Admin</a>
                     <a href="{% url 'teacher_login' %}" class="choice teacher">Teacher</a>
+                    <a href="{% url 'student_login' %}" class="choice student">Student</a>
                 </div>
             </div>
         </div>
         <div class="feedback-section">
             <a href="{% url 'feedback_form' %}" class="btn-feedback">Submit Feedback</a>
         </div>
+    </div>
+
+    <div class="footer" style="text-align:center; padding:20px; color:var(--muted); font-size:13px; border-top:1px solid var(--border); margin-top:40px;">
+        Built by <a href="https://github.com/Joey-1123" style="color:var(--cyan);">Shubham Panchal</a> &amp;
+        <a href="https://github.com/Omii-004" style="color:var(--cyan);">Omkar Tamalwad</a> — Learnalytics
     </div>
 
 </body>
